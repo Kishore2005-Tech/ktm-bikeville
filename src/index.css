@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-body: 'Poppins', sans-serif;
+
+  --bg: #ffffff;
+  --navy: #2f3a5f;
+  --coral: #f1543f;
+  --coral-dark: #d8402c;
+  --text-dark: #1e2233;
+  --muted: #b7bcc9;
+
+  --card-radius: 28px;
+  --ticker-h: 32px;
+  --header-h: 84px;
+
+  --shadow-sm: 0 6px 18px rgba(30, 34, 51, 0.1);
+  --shadow-md: 0 16px 40px rgba(30, 34, 51, 0.16);
+  --shadow-card: 0 30px 60px rgba(47, 58, 95, 0.35);
+  --shadow-coral: 0 10px 24px rgba(241, 84, 63, 0.35);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  padding-top: var(--header-h);
+}
+
+.screen--active {
+  position: relative;
+  z-index: 2;
+  background: var(--bg);
+}
+
+.screen--inactive {
+  position: absolute;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: calc(100vh - var(--header-h));
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--bg);
+}
+
+.stage.is-animating .screen--active {
+  pointer-events: none;
+}

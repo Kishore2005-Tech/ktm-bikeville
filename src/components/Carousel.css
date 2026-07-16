@@ -1,0 +1,204 @@
+.hero-section {
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  padding: 56px 0 40px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.carousel-heading {
+  position: relative;
+  padding-left: 48px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.carousel-heading-bar {
+  position: absolute;
+  left: 48px;
+  bottom: 6px;
+  width: 260px;
+  height: 22px;
+  background: rgba(241, 84, 63, 0.1);
+  border-radius: 4px;
+  z-index: 0;
+}
+
+.carousel-heading h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -1px;
+}
+
+.carousel-heading .accent {
+  color: var(--coral);
+}
+
+.bike-swiper {
+  flex: 1;
+  width: 100%;
+  padding: 0 48px;
+  --swiper-navigation-color: var(--coral);
+  --swiper-navigation-size: 22px;
+}
+
+.bike-swiper .swiper-wrapper {
+  align-items: center;
+}
+
+.bike-swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bike-slide {
+  position: relative;
+  width: 100%;
+  height: min(760px, calc(100vh - 260px));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 24px;
+}
+
+.bike-slide-card {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 3%;
+  top: 5%;
+  background: var(--navy);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(60px) scale(0.9);
+  z-index: 1;
+}
+
+.bike-slide-card-content {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: 3%;
+  top: 5%;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(60px) scale(0.9);
+  padding: 26px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bike-slide-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bike-slide-brand {
+  color: var(--coral);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.bike-slide-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+}
+
+.bike-slide-specs {
+  display: flex;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.bike-slide-specs span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bike-slide-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.bike-slide-price-label {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.bike-slide-price {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.bike-slide-plus {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--coral);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-coral);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bike-slide-plus:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 30px rgba(241, 84, 63, 0.45);
+}
+
+.bike-slide-img {
+  position: relative;
+  z-index: 2;
+  width: 92%;
+  max-width: 400px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.35s ease;
+}
+
+@media (max-width: 1024px) {
+  .carousel-heading h1 {
+    font-size: 40px;
+  }
+  .bike-slide {
+    height: min(660px, calc(100vh - 280px));
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel-heading {
+    padding-left: 24px;
+  }
+  .carousel-heading h1 {
+    font-size: 32px;
+  }
+  .bike-slide {
+    height: min(560px, calc(100vh - 240px));
+  }
+  .bike-slide-name {
+    font-size: 18px;
+  }
+}

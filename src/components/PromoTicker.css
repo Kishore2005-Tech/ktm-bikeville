@@ -1,0 +1,62 @@
+.promo-ticker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--ticker-h);
+  z-index: 200;
+  overflow: hidden;
+  background: #0b0d12;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+}
+
+.promo-ticker-track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: promo-scroll 26s linear infinite;
+}
+
+.promo-ticker-group {
+  display: flex;
+  align-items: center;
+}
+
+.promo-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.promo-ticker-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--coral);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+@keyframes promo-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .promo-ticker-item {
+    font-size: 11px;
+    padding: 0 14px;
+    gap: 14px;
+  }
+}

@@ -1,0 +1,380 @@
+.detail-screen {
+  width: 100%;
+}
+
+/* Hidden by default; App's Flip timeline reveals these once the shared
+   bike image + panel finish flying in (and hides them again on Back). */
+.detail-ui-fade {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.detail-split {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  min-height: 100vh;
+  margin-top: calc(-1 * var(--header-h));
+}
+
+/* ---------- Left: navy panel ---------- */
+
+.detail-panel {
+  position: relative;
+  grid-column: 1;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+.detail-panel-content {
+  position: relative;
+  height: 100%;
+  padding: calc(var(--header-h) + 56px) 56px 56px 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detail-icon-rail {
+  position: absolute;
+  top: calc(var(--header-h) + 56px);
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rail-btn {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.rail-btn.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.rail-btn.active::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--coral);
+}
+
+.detail-panel-header h2 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.detail-tabs {
+  position: relative;
+  display: flex;
+  gap: 28px;
+}
+
+.detail-tabs button {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+.detail-tabs button.active {
+  color: #fff;
+}
+
+.tab-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--coral);
+}
+
+.detail-bike-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 24px 0;
+}
+
+.detail-bike-img {
+  width: 100%;
+  max-width: 620px;
+}
+
+.detail-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.detail-price-row .label {
+  display: block;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.detail-price-row strong {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--coral);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 16px 26px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-coral);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 16px 34px rgba(241, 84, 63, 0.45);
+}
+
+/* ---------- Right: white configurator ---------- */
+
+.detail-config {
+  position: relative;
+  grid-column: 2;
+  background: #fff;
+}
+
+.detail-config-content {
+  height: 100%;
+  padding: calc(var(--header-h) + 56px) 64px 56px;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 15px;
+  width: fit-content;
+  margin-bottom: 40px;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.back-btn:hover {
+  gap: 12px;
+  color: var(--coral);
+}
+
+.config-heading {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+}
+
+.part-selectors {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.part-btn {
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  border: 1.5px solid #e6e8ee;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.part-btn.active {
+  background: #2f7bf1;
+  border-color: #2f7bf1;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.wheels-section h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+}
+
+.wheel-thumbs {
+  position: relative;
+  display: flex;
+  gap: 22px;
+}
+
+.wheel-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.wheel-thumb-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #e6e8ee;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease;
+}
+
+.wheel-thumb:hover .wheel-thumb-circle {
+  transform: scale(1.06);
+}
+
+.wheel-thumb-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.wheel-thumb.active .wheel-thumb-label {
+  color: var(--text-dark);
+}
+
+.wheel-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--coral);
+}
+
+.part-placeholder {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.detail-config-content .social-icons {
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.social-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  background: #f3f4f7;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon-btn:hover {
+  background: var(--text-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- Specs reveal section ---------- */
+
+.specs-section {
+  padding: 72px 64px 96px;
+  max-width: 900px;
+}
+
+.specs-section h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+}
+
+.specs-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.specs-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid #eef0f4;
+  color: var(--text-dark);
+  font-size: 15px;
+}
+
+.specs-row span:first-child {
+  color: var(--muted);
+}
+
+.specs-row span:last-child {
+  font-weight: 600;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .detail-panel-content {
+    padding: 48px 40px 48px 110px;
+  }
+  .detail-config-content {
+    padding: 48px 40px;
+  }
+  .config-heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .detail-split {
+    grid-template-columns: 1fr;
+  }
+  .detail-panel,
+  .detail-config {
+    grid-column: 1;
+  }
+  .detail-panel {
+    min-height: 640px;
+  }
+  .detail-icon-rail {
+    top: calc(var(--header-h) + 16px);
+    left: 20px;
+    flex-direction: row;
+  }
+  .detail-panel-content {
+    padding: calc(var(--header-h) + 40px) 28px 32px;
+  }
+  .detail-config-content {
+    padding: calc(var(--header-h) + 24px) 28px 40px;
+  }
+  .specs-section {
+    padding: 48px 28px 72px;
+  }
+}
