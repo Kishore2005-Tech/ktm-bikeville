@@ -13,7 +13,7 @@ KTM Bikeville reimagines a motorcycle catalog as an immersive, scroll-driven exp
 
 ## Features
 
-- **Frame-by-frame hero scroll** — a pinned, scroll-scrubbed image sequence (300 frames) tells the brand story in three beats, synced to `ScrollTrigger`.
+- **Frame-by-frame hero scroll — a pinned, scroll-scrubbed image sequence (300 frames) tells the brand story in three beats, synced to `ScrollTrigger`.
 - **3D bike carousel** — browse the KTM lineup (Super Adventure, Super Duke, EXC-F, Enduro, RC series) via a Swiper-powered carousel.
 - **Shared-element detail transitions** — selecting a bike animates its image and card directly into the detail screen using GSAP's `Flip` plugin, with no jarring cuts.
 - **Live configurator** — swap wheel finishes and preview color/material variants on the bike image in real time.
